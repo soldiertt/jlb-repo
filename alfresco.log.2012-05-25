@@ -1,0 +1,75 @@
+23:43:59,347 INFO  [org.alfresco.config.JndiPropertiesFactoryBean] Loading properties file from class path resource [alfresco/repository.properties]
+23:43:59,349 INFO  [org.alfresco.config.JndiPropertiesFactoryBean] Loading properties file from class path resource [alfresco/domain/transaction.properties]
+23:43:59,349 INFO  [org.alfresco.config.JndiPropertiesFactoryBean] Loading properties file from URL [file:/home/jeanlouis/javadev/prj/someco-repo/target/someco-repo-webapp/WEB-INF/classes/alfresco-global.properties]
+23:43:59,453 INFO  [org.alfresco.config.FixedPropertyPlaceholderConfigurer] Loading properties file from class path resource [alfresco/version.properties]
+23:43:59,540 INFO  [org.alfresco.config.JndiPropertyPlaceholderConfigurer] Loading properties file from class path resource [alfresco/alfresco-shared.properties]
+23:43:59,937 INFO  [org.alfresco.config.FixedPropertyPlaceholderConfigurer] Loading properties file from class path resource [alfresco/domain/cache-strategies.properties]
+23:44:01,057 ERROR [org.springframework.web.context.ContextLoader] Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'encryptionKeysRegistry' defined in class path resource [alfresco/encryption-context.xml]: Cannot resolve reference to bean 'transactionService' while setting bean property 'transactionService'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionService' defined in class path resource [alfresco/core-services-context.xml]: Instantiation of bean failed; nested exception is java.lang.ExceptionInInitializerError
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:328)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveValueIfNecessary(BeanDefinitionValueResolver.java:106)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1325)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1086)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:517)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:288)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:190)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:580)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:895)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:425)
+	at org.springframework.web.context.ContextLoader.createWebApplicationContext(ContextLoader.java:276)
+	at org.springframework.web.context.ContextLoader.initWebApplicationContext(ContextLoader.java:197)
+	at org.springframework.web.context.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:47)
+	at org.alfresco.web.app.ContextLoaderListener.contextInitialized(ContextLoaderListener.java:63)
+	at org.mortbay.jetty.handler.ContextHandler.startContext(ContextHandler.java:549)
+	at org.mortbay.jetty.servlet.Context.startContext(Context.java:136)
+	at org.mortbay.jetty.webapp.WebAppContext.startContext(WebAppContext.java:1282)
+	at org.mortbay.jetty.handler.ContextHandler.doStart(ContextHandler.java:518)
+	at org.mortbay.jetty.webapp.WebAppContext.doStart(WebAppContext.java:499)
+	at org.mortbay.jetty.plugin.Jetty6PluginWebAppContext.doStart(Jetty6PluginWebAppContext.java:115)
+	at org.mortbay.component.AbstractLifeCycle.start(AbstractLifeCycle.java:50)
+	at org.mortbay.jetty.plugin.Jetty6RunWarExploded.restartWebApp(Jetty6RunWarExploded.java:146)
+	at org.mortbay.jetty.plugin.Jetty6RunWarExploded$1.filesChanged(Jetty6RunWarExploded.java:100)
+	at org.mortbay.util.Scanner.reportBulkChanges(Scanner.java:486)
+	at org.mortbay.util.Scanner.reportDifferences(Scanner.java:352)
+	at org.mortbay.util.Scanner.scan(Scanner.java:280)
+	at org.mortbay.util.Scanner$1.run(Scanner.java:232)
+	at java.util.TimerThread.mainLoop(Timer.java:512)
+	at java.util.TimerThread.run(Timer.java:462)
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'transactionService' defined in class path resource [alfresco/core-services-context.xml]: Instantiation of bean failed; nested exception is java.lang.ExceptionInInitializerError
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:965)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:911)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:485)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:456)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:291)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:288)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:190)
+	at org.springframework.beans.factory.support.BeanDefinitionValueResolver.resolveReference(BeanDefinitionValueResolver.java:322)
+	... 31 more
+Caused by: java.lang.ExceptionInInitializerError
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:39)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:27)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:513)
+	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:126)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:74)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:958)
+	... 39 more
+Caused by: java.lang.IllegalStateException: Shutdown in progress
+	at java.lang.ApplicationShutdownHooks.add(ApplicationShutdownHooks.java:39)
+	at java.lang.Runtime.addShutdownHook(Runtime.java:192)
+	at org.alfresco.util.VmShutdownListener.<init>(VmShutdownListener.java:62)
+	at org.alfresco.repo.transaction.TransactionServiceImpl.<clinit>(TransactionServiceImpl.java:50)
+	... 46 more
+23:58:26,041 INFO  [org.alfresco.config.JndiPropertiesFactoryBean] Loading properties file from class path resource [alfresco/repository.properties]
+23:58:26,074 INFO  [org.alfresco.config.JndiPropertiesFactoryBean] Loading properties file from class path resource [alfresco/domain/transaction.properties]
+23:58:26,075 INFO  [org.alfresco.config.JndiPropertiesFactoryBean] Loading properties file from URL [file:/home/jeanlouis/javadev/prj/someco-repo/target/someco-repo-webapp/WEB-INF/classes/alfresco-global.properties]
+23:58:26,417 INFO  [org.alfresco.config.FixedPropertyPlaceholderConfigurer] Loading properties file from class path resource [alfresco/version.properties]
+23:58:26,952 INFO  [org.alfresco.config.JndiPropertyPlaceholderConfigurer] Loading properties file from class path resource [alfresco/alfresco-shared.properties]
+23:58:27,233 INFO  [org.alfresco.config.FixedPropertyPlaceholderConfigurer] Loading properties file from class path resource [alfresco/domain/cache-strategies.properties]
+23:58:50,009 INFO  [org.alfresco.config.FixedPropertyPlaceholderConfigurer] Loading properties file from class path resource [alfresco/version.properties]
+23:58:50,010 INFO  [org.alfresco.config.JndiPropertyPlaceholderConfigurer] Loading properties file from class path resource [alfresco/alfresco-shared.properties]
+23:58:50,011 INFO  [org.alfresco.config.FixedPropertyPlaceholderConfigurer] Loading properties file from class path resource [alfresco/domain/cache-strategies.properties]

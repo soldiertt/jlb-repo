@@ -1,0 +1,58 @@
+<alfresco-config>
+    <config evaluator="node-type" condition="sc:doc">
+        <property-sheet>
+            <show-association name="sc:relatedDocuments" display-label-id="sc_relatedDocuments" />
+        </property-sheet>
+    </config>
+    <config evaluator="aspect-name" condition="sc:webable">
+        <property-sheet>
+            <show-property name="sc:published" display-label-id="sc_published" />
+            <show-property name="sc:isActive" display-label-id="sc_isActive" read-only="true" />
+            <show-association name="sc:relatedDocuments" display-label-id="sc_relatedDocuments" />
+        </property-sheet>
+    </config>
+    <config evaluator="aspect-name" condition="sc:productRelated">
+        <property-sheet>
+            <show-property name="sc:product" display-label-id="sc_product" />
+            <show-property name="sc:version" display-label-id="sc_version" />
+        </property-sheet>
+    </config>
+    <config evaluator="string-compare" condition="Content Wizards">
+        <content-types>
+            <type name="sc:doc" />
+            <type name="sc:whitepaper" />
+        </content-types>
+    </config>
+    <config evaluator="string-compare" condition="Space Wizards">
+        <folder-types>
+            <type name="sc:folder" />
+        </folder-types>
+    </config>
+    <config evaluator="string-compare" condition="Action Wizards">
+        <aspects>
+            <aspect name="sc:webable" />
+        </aspects>
+        <specialise-types>
+            <type name="sc:folder" />
+            <type name="sc:doc" />
+            <type name="sc:whitepaper" />
+        </specialise-types>
+    </config>
+    <config evaluator="string-compare" condition="Advanced Search">
+        <advanced-search>
+            <content-types>
+                <type name="sc:doc" />
+                <type name="sc:whitepaper" />
+            </content-types>
+            <folder-types>
+                <type name="sc:folder" />
+            </folder-types>
+            <custom-properties>
+                <meta-data aspect="sc:webable" property="sc:published" display-label-id="sc_published" />
+                <meta-data aspect="sc:webable" property="sc:isActive" display-label-id="sc_isActive" />
+                <meta-data aspect="sc:productRelated" property="sc:product" display-label-id="sc_product" />
+                <meta-data aspect="sc:productRelated" property="sc:version" display-label-id="sc_version" />
+            </custom-properties>
+        </advanced-search>
+    </config>
+</alfresco-config>
