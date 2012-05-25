@@ -106,6 +106,7 @@
 		<module.log.level>debug</module.log.level>
         <spring.version>3.0.5.RELEASE</spring.version>
 	</properties>
+	
 	<!--
 		need to list these as a provided so that Maven doesn't download them
 		and include them in the AMP, they are provided by Alfresco
@@ -156,11 +157,11 @@
 		The scm is required for the buildnumber-maven-plugin which is required
 		for AMP version numbering
 	-->
-	<scm>
-		<connection>scm:svn:http://domain.com/svn/trunk/</connection>
-		<developerConnection>scm:svn:https://${user.name}@domain.com/svn/trunk/</developerConnection>
-		<url>http://domain.com/svn/trunk/</url>
-	</scm>
+	 <scm>
+		<connection>scm:git:git@github.com:soldiertt/jlb-repo.git</connection>
+		<url>scm:git:git@github.com:soldiertt/jlb-repo.git</url>
+		<developerConnection>scm:git:git@github.com:soldiertt/jlb-repo.git</developerConnection>
+    </scm>
 	<build>
         <plugins>
             <!-- Needed for cross OS compatibility in acp/zip encoding -->
@@ -513,4 +514,5 @@
 		</profile>
 
 	</profiles>
+	
 </project>
