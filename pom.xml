@@ -14,8 +14,7 @@
 		the specific language governing permissions and limitations under the
 		License.
 	-->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.someco</groupId>
 	<artifactId>someco-repo</artifactId>
@@ -27,11 +26,11 @@
 		http://wiki.alfresco.com/wiki/Developing_an_Alfresco_Module: "The
 		version number must be made up of numeric values separated by dots.
 		For example '2.1.56' is a valid version number, '2.3.4a' is not. " In
-		order to be able to use Maven snapshots we cannot use the <version/>
+		order to be able to use Maven snapshots we cannot use the <version />
 		below as the AMP module version. Instead we use the
 		buildnumber-maven-plugin. This requires a scm connection.
 	-->
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0</version>
 	<description>Test AMP project</description>
 	<repositories>
 		<repository>
@@ -100,7 +99,7 @@
 		<alfresco.db.hibernate.dialect>org.hibernate.dialect.MySQLInnoDBDialect</alfresco.db.hibernate.dialect>
 
         <webapp.log.level>error</webapp.log.level>
-		<webapp.log.dir></webapp.log.dir>
+		<webapp.log.dir />
 		<!--  End of testing webapp specific properties -->
 		<!--  Module specific build time properties -->
 		<module.log.level>debug</module.log.level>
